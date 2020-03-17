@@ -26,7 +26,7 @@ SECRET_KEY = 'cq&ug(8c1#(6(151h33qy(=ue7ftx4%tni)q(k$z6apqm%^=d('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['readersapp.herokuapp.com','127.0.0.1']
 
 
 # Application definition
