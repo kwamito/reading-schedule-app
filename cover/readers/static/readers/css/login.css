@@ -1,0 +1,8 @@
+body{
+    background-image: url('../images/undraw_Login.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+form h3{
+    text-align: center;
+}

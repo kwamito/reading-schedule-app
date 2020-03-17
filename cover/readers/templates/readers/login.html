@@ -1,0 +1,19 @@
+{% extends 'readers/base.html' %}
+{% load crispy_forms_tags %}
+{% block styles %}
+<link href="https://fonts.googleapis.com/css?family=Oxanium&display=swap" rel="stylesheet">
+{% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'readers/css/login.css' %}">
+{% endblock %}
+{% block content %}
+<div class="container">
+    <form method="POST" class="form-group" onclick="closeNav()">
+        {% csrf_token %}
+        <h3>Login</h3>
+        {{ form|crispy }}
+        <div class="form-group">
+            <center><button type="submit" class="ui secondary button">Submit</button></center>
+        </div>
+    </form>
+</div>
+{% endblock %}

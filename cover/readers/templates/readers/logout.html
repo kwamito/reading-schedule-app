@@ -1,0 +1,14 @@
+{% extends 'readers/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container">
+    <h2 style="text-align: center;"><i class="sign out alternate icon"></i> You have been logged out</h2>
+    <small class="text-muted">
+        
+        <center><a href="{% url 'login' %}" style="margin-top: 59px;" class="ui active button">
+            <i class="sign in alternate icon"></i>
+            Login
+          </a></center>
+   </small>
+</div>
+{% endblock %}

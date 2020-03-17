@@ -1,0 +1,9 @@
+#cardo{
+    margin-left: 400px;
+}
+
+@media screen and (max-width: 830px) {
+    #cardo{
+        margin-left: 60px;
+    }
+  }

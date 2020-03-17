@@ -1,0 +1,37 @@
+{% extends 'readers/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container">
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Reader</th>
+            <th scope="col">Date Reading</th>
+            <th scope="col">Publication</th>
+          </tr>
+        </thead>
+        {% for list in lists %}
+        {% if list.date_reading < today %}
+        <tbody style="display: none;">
+          {% else %}
+          <tbody>
+        {% endif %}
+          <tr>
+            
+            <th scope="row">{{ list.reader }}</th>
+            <td>{% if list.date_reading == today %}
+                today
+                {% else %}
+                 {{ list.date_reading }}
+                {% endif %}</td>
+                <td>{{ list.publication }}</td>
+          
+            </tr>
+        </tbody>
+        {% endfor %}
+      </table>
+      
+</div>
+
+
+{% endblock %}

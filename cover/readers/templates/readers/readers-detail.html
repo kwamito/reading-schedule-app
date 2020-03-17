@@ -1,0 +1,32 @@
+{% extends 'readers/base.html' %}
+{% load crispy_forms_tags %}
+{% block styles %}
+{% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'readers/css/reader-detail.css' %}">
+{% endblock %}
+{% block content %}
+<div class="container">
+
+    <div class="row" style="margin-top: 40px;">
+      <div id="cardo" class="ui card" style="width: 300px;">
+        <div class="content">
+          <img class="ui avatar image" src="{{ reader.profile_image.url }}"> {{ reader.name }}
+        </div>
+        <div class="image">
+          <img src="{{ reader.profile_image.url }}">
+        </div>
+        <div class="content">
+          <p>Joined on {{ reader.date_joined|date:"F d, Y" }}</p>
+          <hr>
+        <div class="extra content">
+          <i class="user md icon"></i>
+              
+        </div>
+        <hr>
+        <center><a href="" class="btn btn-outline-danger btn-sm">Delete</a>
+        <a href="" class="btn btn-outline-primary btn-sm">Update</a>
+        </center>
+      </div>
+    </div>
+</div>
+{% endblock %}

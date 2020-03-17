@@ -1,0 +1,24 @@
+{% extends 'readers/base.html' %}
+{% block content %}
+{% for list in lists %}
+<div class="container">
+{% if list.date_reading < today %}
+<div class="card" style="margin-top: 20px; display: none;">
+{% else %}
+<div class="card" style="margin-top: 20px;">
+{% endif %}
+    <div class="card-body">
+        <img class="right floated mini ui image" src="{{ list.reader.profile_image.url }}"><h5 class="card-title">{{ list.reader }}</h5>
+      <p class="card-text">{% if list.date_reading == today %}
+        {{ list.reader.name }} is reading the {{ list.publication }} today
+        {% else %}
+        {{ list.reader.name }} is reading the {{ list.publication }} on {{ list.date_reading }}
+        {% endif %}</p>
+        <p class="card-text">Title: {{ list.title }} </p>
+       <!---- <center><a href="{% url 'reading-update' list.id %}" class="btn btn-outline-primary btn-sm">Update</a>
+        <button class="btn btn-outline-danger btn-sm">Delete</button></center>-->
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'readers/base.html' %}
+{% block content %}
+<div class="container">
+{% for reader in readers %}
+<div class="row">
+    <div class="ui card" style="width: 1200px; margin-bottom: 15px; margin-top: 20px;">
+        <div class="content">
+            <img class="ui avatar image" src="{{ reader.profile_image.url }}">
+          <a href="{% url 'reader-detail' reader.id %}" class="card-link">{{ reader.name}}</a>
+          <hr>
+          <div class="meta">Joined on {{ reader.date_joined|date:"F d, Y" }}</div>
+          <h4 href="" class="card-link" style="text-align: center;"></h4>
+          
+        </div>
+        <div class="extra content">
+           
+        </div>
+      </div>
+</div>
+{% endfor %}
+</div>
+{% endblock %}
